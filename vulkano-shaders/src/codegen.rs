@@ -176,6 +176,8 @@ pub fn compile(
         },
     );
 
+    compile_options.set_optimization_level(shaderc::OptimizationLevel::Performance);
+
     for (macro_name, macro_value) in macro_defines.iter() {
         compile_options.add_macro_definition(macro_name.as_ref(), Some(macro_value.as_ref()));
     }
